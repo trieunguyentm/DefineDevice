@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-const setListPlugin = () => {
+const getListPlugin = () => {
   let listPlugin = [];
   let plugins = navigator.plugins;
   if (plugins.length > 0) {
@@ -12,19 +12,19 @@ const setListPlugin = () => {
   return listPlugin;
 };
 
-
-// const getDefaultBackgroundColor = () => {
-//   const bodyComputedStyle = window.getComputedStyle(document.body)
-//   console.log(bodyComputedStyle.fontSize)
-//   console.log(bodyComputedStyle.backgroundColor)
-// }
-
+const getWebGL = () => {
+  var canvas = document.createElement("canvas");
+  var gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+  var renderer = gl.getParameter(gl.RENDERER);
+  return renderer
+}
 
 function App() {
   const screenHeight = window.screen.height;
   const screenWidth = window.screen.width;
-  const listPlugin = setListPlugin();
+  const listPlugin = getListPlugin();
   const bodyComputedStyle = window.getComputedStyle(document.body)
+  getWebGL()
   return (
     <div className="App">
       <div>{navigator.platform}</div>
@@ -37,6 +37,7 @@ function App() {
       </div>
       <div>{bodyComputedStyle.fontSize}</div>
       <div>{bodyComputedStyle.backgroundColor}</div>
+      <div>{getWebGL()}</div>
     </div>
   );
 }
