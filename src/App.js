@@ -115,22 +115,22 @@ function App() {
   return (
     <div className="App">
       <div><b>user agent:</b>{navigator.userAgent}</div>
-      <div><b>platform:</b> {navigator.platform}</div>
-      <div><b>height and width:</b> {`${screenHeight}x${screenWidth}`}</div>
-      <div><b>list plugin</b></div>
+      <div style={{color: "red"}}><b>platform:</b> {navigator.platform}</div>
+      <div style={{color: "red"}}><b>height and width:</b> {`${screenHeight}x${screenWidth}`}</div>
+      <div style={{color: "red"}}><b>list plugin</b></div>
       <div>
         {listPlugin.map((plugin, index) => (
           // <div key={index}>{`${plugin.name} - ${plugin.filename}`}</div>
           <div key={index}>{`${plugin.name}`}</div>
         ))}
       </div>
-      <div><b>font size:</b>{bodyComputedStyle.fontSize}</div>
-      <div><b>backgroundColor: </b>{bodyComputedStyle.backgroundColor}</div>
-      <div><b>webGL:</b>{getWebGL()}</div>
+      <div style={{color: "red"}}><b>font size:</b>{bodyComputedStyle.fontSize}</div>
+      <div style={{color: "red"}}><b>backgroundColor: </b>{bodyComputedStyle.backgroundColor}</div>
+      <div style={{color: "red"}}><b>webGL:</b>{getWebGL()}</div>
       <div><b>language:</b>{navigator.language || navigator.userLanguage}</div>
-      <div><b>java:</b>{getJavaVersion()}</div>
-      <div><b>cookie:</b>{checkCookieSupport()}</div>
-      <div><b>DPI:</b>{getDPI()}</div>
+      <div style={{color: "red"}}><b>java:</b>{getJavaVersion()}</div>
+      <div style={{color: "red"}}><b>cookie:</b>{checkCookieSupport()}</div>
+      <div style={{color: "red"}}><b>DPI:</b>{getDPI()}</div>
       <div><b>CPU:</b>{getCPUInfo()}</div>
       <div><b>Font:</b>{getFontSupport().map((font, index)=>{
         return (
